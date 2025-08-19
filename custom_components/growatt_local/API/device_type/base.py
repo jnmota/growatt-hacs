@@ -117,6 +117,7 @@ ATTR_CHARGE_POWER = "charge_power"  # W
 
 ATTR_PAC_TO_USER_TOTAL = "pac_to_user_total"  # W
 ATTR_PAC_TO_GRID_TOTAL = "pac_to_grid_total"  # W
+ATTR_PAC_TO_USER_LOAD_TOTAL = "pac_to_user_load_total"  # W
 
 ATTR_POWER_TO_USER = "power_to_user"  # W
 ATTR_POWER_TO_GRID = "power_to_grid"  # W
