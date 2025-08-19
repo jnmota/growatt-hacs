@@ -35,7 +35,7 @@ from .device_type.base import (
     ATTR_STATUS_CODE,
     inverter_status,
 )
-from .device_type.mod_tl3_hu import MOD_TL3_HU_HOLDING_REGISTERS, MOD_TL3_HU_INPUT_REGISTERS
+from .device_type.mod_tl3_hu import MOD_TL3_HU_HOLDING_REGISTERS, MOD_TL3_HU_INPUT_REGISTERS, MAXIMUM_DATA_LENGTH_120
 from .device_type.inverter_120 import MAXIMUM_DATA_LENGTH_120, HOLDING_REGISTERS_120, INPUT_REGISTERS_120, INPUT_REGISTERS_120_TL_XH
 from .device_type.storage_120 import STORAGE_HOLDING_REGISTERS_120, STORAGE_INPUT_REGISTERS_120, STORAGE_INPUT_REGISTERS_120_TL_XH
 from .device_type.inverter_315 import MAXIMUM_DATA_LENGTH_315, HOLDING_REGISTERS_315, INPUT_REGISTERS_315
@@ -397,7 +397,7 @@ class GrowattDevice:
 
 def get_register_information(GrowattDeviceType: DeviceTypes) -> DeviceRegisters:
     if GrowattDeviceType == DeviceTypes.MOD_TL3_HU:
-        max_length = MAXIMUM_DATA_LENGTH
+        max_length = MAXIMUM_DATA_LENGTH_120
         holding_register = {
             obj.register: obj for obj in MOD_TL3_HU_HOLDING_REGISTERS
         }

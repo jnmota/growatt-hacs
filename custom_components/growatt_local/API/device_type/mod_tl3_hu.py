@@ -85,7 +85,7 @@ from .base import (
 
 
 
-MAXIMUM_DATA_LENGTH = 100
+MAXIMUM_DATA_LENGTH_120 = 100
 
 
 def model(registers) -> str:
