@@ -246,17 +246,17 @@ def process_registers(
             continue
 
         if register.value_type == int:
-            result[register.name] = value
+            result[register.name] = value * register.multiplier
 
         elif register.value_type == float and register.length == 2:
             if (second_value := register_values.get(key + 1, None)) is None:
                 continue
 
             signed_value = ctypes.c_int32((value << 16) | second_value).value
-            result[register.name] = round(float(signed_value) / register.scale, 3)
+            result[register.name] = round(float(signed_value) / register.scale, 3) * register.multiplier
 
         elif register.value_type == float:
-            result[register.name] = round(float(value) / register.scale, 3)
+            result[register.name] = round(float(value) / register.scale, 3) * register.multiplier
 
         elif register.value_type == str:
             string = ""

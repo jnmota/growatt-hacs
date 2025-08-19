@@ -184,13 +184,13 @@ MOD_TL3_HU_INPUT_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
         name=ATTR_ENERGY_TO_GRID_TOTAL, register=3073, value_type=float, length=2
     ),
     GrowattDeviceRegisters(
-        name=ATTR_TEMPERATURE, register=3093, value_type=int, length=1, scale=10
+        name=ATTR_TEMPERATURE, register=3093, value_type=int, length=1, multiplier=0.1
     ),
     GrowattDeviceRegisters(
-        name=ATTR_IPM_TEMPERATURE, register=3094, value_type=int, length=1, scale=10
+        name=ATTR_IPM_TEMPERATURE, register=3094, value_type=int, length=1, multiplier=0.1
     ),
     GrowattDeviceRegisters(
-        name=ATTR_BOOST_TEMPERATURE, register=3095, value_type=int, length=1, scale=10
+        name=ATTR_BOOST_TEMPERATURE, register=3095, value_type=int, length=1, multiplier=0.1
     ),
     GrowattDeviceRegisters(
         name=ATTR_OUTPUT_PERCENTAGE, register=3101, value_type=int, length=1
