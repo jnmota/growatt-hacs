@@ -105,7 +105,7 @@ async def async_setup_entry(
     elif device_type in (DeviceTypes.HYBRID_120, DeviceTypes.HYBRID_120_TL_XH, DeviceTypes.MOD_TL3_HU):
         power_sensor = (ATTR_INPUT_POWER, ATTR_OUTPUT_POWER,
                         ATTR_SOC_PERCENTAGE, ATTR_DISCHARGE_POWER, ATTR_CHARGE_POWER,
-                        ATTR_PAC_TO_USER_TOTAL, ATTR_PAC_TO_GRID_TOTAL, ATTR_PAC_TO_USER_LOAD_TOTAL)
+                        ATTR_PAC_TO_USER_TOTAL, ATTR_PAC_TO_GRID_TOTAL)
     elif device_type in (DeviceTypes.STORAGE_120, ):
         power_sensor = (ATTR_SOC_PERCENTAGE, ATTR_DISCHARGE_POWER, ATTR_CHARGE_POWER)
     elif device_type == DeviceTypes.OFFGRID_SPF:
