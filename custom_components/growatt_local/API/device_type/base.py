@@ -312,7 +312,7 @@ def inverter_status(value: dict[str, Any]) -> str | None:
     if ATTR_STATUS_CODE not in value.keys():
         return None
 
-    status_value = InverterStatus(value[ATTR_STATUS_CODE] & 0x0F)
+    status_value = InverterStatus(int(value[ATTR_STATUS_CODE]) & 0x0F)
 
     if status_value in [InverterStatus.Normal, InverterStatus.PV_charge, InverterStatus.PV_charge_bypass]:
         derating = value.get(ATTR_DERATING_MODE, None)
