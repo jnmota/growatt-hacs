@@ -75,6 +75,8 @@ ATTR_INPUT_8_POWER = "input_8_power"  # W
 ATTR_INPUT_8_ENERGY_TODAY = "input_8_energy_today"  # kWh
 ATTR_INPUT_8_ENERGY_TOTAL = "input_8_energy_total"  # kWh
 
+ATTR_SYSTEM_OUTPUT_POWER = "system_output_power"  # W
+
 ATTR_OUTPUT_POWER = "output_power"  # W
 ATTR_OUTPUT_ENERGY_TODAY = "output_energy_today"  # kWh
 ATTR_OUTPUT_ENERGY_TOTAL = "output_energy_total"  # kWh
