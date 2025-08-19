@@ -62,6 +62,7 @@ MODBUS_FRAMER_OPTION = [
 ]
 
 DEVICETYPES_OPTION = [
+    selector.SelectOptionDict(value=DeviceTypes.MOD_TL3_HU, label="RTU 2 - MOD 3-15KTL3-HU)"),
     selector.SelectOptionDict(value=DeviceTypes.INVERTER_120, label="RTU 2 - Inverter TL3-X (MAX, MID MAC Type)"),
     selector.SelectOptionDict(value=DeviceTypes.HYBRID_120, label="RTU 2 - Storage (MIX Type, SPA, SPH)"),
     selector.SelectOptionDict(value=DeviceTypes.HYBRID_120_TL_XH, label="RTU 2 - Hybrid TL-X(H) (MIN Type)"),

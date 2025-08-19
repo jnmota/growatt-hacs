@@ -35,6 +35,7 @@ from .device_type.base import (
     ATTR_STATUS_CODE,
     inverter_status,
 )
+from .device_type.MOD_TL3_HU import MOD_TL3_HU_HOLDING_REGISTERS, MOD_TL3_HU_INPUT_REGISTERS
 from .device_type.inverter_120 import MAXIMUM_DATA_LENGTH_120, HOLDING_REGISTERS_120, INPUT_REGISTERS_120, INPUT_REGISTERS_120_TL_XH
 from .device_type.storage_120 import STORAGE_HOLDING_REGISTERS_120, STORAGE_INPUT_REGISTERS_120, STORAGE_INPUT_REGISTERS_120_TL_XH
 from .device_type.inverter_315 import MAXIMUM_DATA_LENGTH_315, HOLDING_REGISTERS_315, INPUT_REGISTERS_315
@@ -395,7 +396,15 @@ class GrowattDevice:
 
 
 def get_register_information(GrowattDeviceType: DeviceTypes) -> DeviceRegisters:
-    if GrowattDeviceType in (DeviceTypes.INVERTER, DeviceTypes.INVERTER_315):
+    if GrowattDeviceType == DeviceTypes.MOD_TL3_HU:
+        max_length = MAXIMUM_DATA_LENGTH
+        holding_register = {
+            obj.register: obj for obj in MOD_TL3_HU_HOLDING_REGISTERS
+        }
+        input_register = {
+            obj.register: obj for obj in MOD_TL3_HU_INPUT_REGISTERS
+        }
+    elif GrowattDeviceType in (DeviceTypes.INVERTER, DeviceTypes.INVERTER_315):
         max_length = MAXIMUM_DATA_LENGTH_315
         holding_register = {
             obj.register: obj for obj in HOLDING_REGISTERS_315
@@ -460,7 +469,7 @@ async def get_device_info(device: GrowattModbusBase, unit: int, fixed_device_typ
     minimal_length = min((MAXIMUM_DATA_LENGTH_120, MAXIMUM_DATA_LENGTH_315))
 
     if fixed_device_types is not None:
-        if fixed_device_types in (DeviceTypes.INVERTER_120, DeviceTypes.HYBRID_120, 
+        if fixed_device_types in (DeviceTypes.MOD_TL3_HU, DeviceTypes.INVERTER_120, DeviceTypes.HYBRID_120, 
                                   DeviceTypes.HYBRID_120_TL_XH, DeviceTypes.STORAGE_120):
             return await device.get_device_info(HOLDING_REGISTERS_120, minimal_length, unit)
         elif fixed_device_types in (DeviceTypes.INVERTER_315, DeviceTypes.OFFGRID_SPF):

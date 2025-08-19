@@ -56,7 +56,7 @@ git clone https://github.com/WouterTuinstra/Homeassistant-Growatt-Local-Modbus.g
 ln -s /share/custom_components/Homeassistant-Growatt-Local-Modbus/custom_components/growatt_local /config/custom_components/growatt_local
 ```
 
-# Example: Testing the API and Requesting Register Values Without Home Assistant
+# Example: Testing the API and Requesting Register Vealues Without Home Assistant
 
 You can test the API directly without Home Assistant by running a Python script. This is useful for development, debugging, or exploring register values.
 
@@ -75,7 +75,7 @@ You can test the API directly without Home Assistant by running a Python script.
 
    ```shell
    pip install pymodbus
-   ```
+   ```e
 
 5. Run the following script (adjust the serial port and device type as needed):
 

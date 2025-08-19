@@ -5,11 +5,13 @@ from enum import Enum
 
 
 DEFAULT_PORT = "/dev/ttyUSB0"
+DEFAULT_IP = "192.168.0."
 DEFAULT_ADDRESS = 0x1
 
 
 # Supported devices
 class DeviceTypes(str, Enum):
+    MOD_TL3_HU = "mod_tl3_hu"
     INVERTER = "inverter"
     INVERTER_120 = "inverter_120"
     STORAGE_120 = "storage_120"
