@@ -4,13 +4,13 @@ from typing import Any, Callable
 
 # Attribute names for values in the holding register
 ATTR_FIRMWARE = "firmware"
-ATTR_SERIAL_NUMBER = "serial number"
-ATTR_INVERTER_MODEL = "Inverter model"
+ATTR_SERIAL_NUMBER = "serial_number"
+ATTR_INVERTER_MODEL = "inverter_model"
 
-ATTR_DEVICE_TYPE_CODE = "device type code"
-ATTR_NUMBER_OF_TRACKERS_AND_PHASES = "number of trackers and phases"
+ATTR_DEVICE_TYPE_CODE = "device_type_code"
+ATTR_NUMBER_OF_TRACKERS_AND_PHASES = "number_of_trackers_and_phases"
 
-ATTR_MODBUS_VERSION = "modbus version"
+ATTR_MODBUS_VERSION = "modbus_version"
 
 # Attribute names for values in the holding register
 ATTR_INVERTER_ENABLED = "inverter_enabled"

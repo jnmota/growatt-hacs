@@ -36,7 +36,7 @@ from ..API.device_type.base import (
 STORAGE_SWITCH_TYPES: tuple[GrowattSwitchEntityDescription, ...] = (
     GrowattSwitchEntityDescription(
         key=ATTR_AC_CHARGE_ENABLED,
-        name="AC Charge",
+        name="Grid Charge",
         state_on=0x1,
         state_off=0x0
     ),
@@ -46,50 +46,50 @@ STORAGE_SWITCH_TYPES: tuple[GrowattSwitchEntityDescription, ...] = (
 STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
     GrowattSensorEntityDescription(
         key=ATTR_SOC_PERCENTAGE,
-        name="SOC",
+        name="Battery",
         native_unit_of_measurement=PERCENTAGE,
         device_class=SensorDeviceClass.BATTERY
     ),
     GrowattSensorEntityDescription(
         key=ATTR_DISCHARGE_POWER,
-        name="Discharge Power",
+        name="Battery Discharge",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER
     ),
     GrowattSensorEntityDescription(
         key=ATTR_CHARGE_POWER,
-        name="Charge Power",
+        name="Battery Charge",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER
     ),
     GrowattSensorEntityDescription(
         key=ATTR_POWER_TO_USER,
-        name="Power to user",
+        name="From Grid",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER,
     ),
     GrowattSensorEntityDescription(
         key=ATTR_POWER_TO_GRID,
-        name="Power to grid",
+        name="To Grid",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER,
     ),
     GrowattSensorEntityDescription(
         key=ATTR_POWER_USER_LOAD,
-        name="Power user load",
+        name="Load",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER,
     ),
     GrowattSensorEntityDescription(
         key=ATTR_ENERGY_TO_GRID_TOTAL,
-        name="Energy To Grid (Total)",
+        name="To Grid (Total)",
         native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
     ),
     GrowattSensorEntityDescription(
         key=ATTR_ENERGY_TO_GRID_TODAY,
-        name="Energy To Grid (Today)",
+        name="To Grid (Today)",
         native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
@@ -97,7 +97,7 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
     ),
     GrowattSensorEntityDescription(
         key=ATTR_ENERGY_TO_USER_TOTAL,
-        name="Energy To User (Total)",
+        name="From Grid (Total)",
         native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
@@ -105,7 +105,7 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
 
     GrowattSensorEntityDescription(
         key=ATTR_ENERGY_TO_USER_TODAY,
-        name="Energy To User (Today)",
+        name="From Grid (Today)",
         native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
@@ -113,7 +113,7 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
     ),
     GrowattSensorEntityDescription(
         key=ATTR_AC_CHARGE_ENABLED,
-        name="AC Charge Enabled"
+        name="Grid Charge"
     ),
     GrowattSensorEntityDescription(
         key=ATTR_DISCHARGE_ENERGY_TODAY,
@@ -147,14 +147,14 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
     ),
     GrowattSensorEntityDescription(
         key=ATTR_PAC_TO_USER_TOTAL,
-        name="AC to user total",
+        name="From Grid (Total)",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER,
     ),
     GrowattSensorEntityDescription(
         key=ATTR_PAC_TO_GRID_TOTAL,
-        name="AC to grid total",
+        name="To Grid (Total)",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER,
-    ),
+    )
 )
