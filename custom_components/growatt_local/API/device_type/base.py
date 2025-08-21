@@ -25,6 +25,7 @@ ATTR_WARNING_CODE = "warning_code"
 ATTR_WARNING_VALUE = "warning_value"
 
 ATTR_INPUT_POWER = "input_power"  # W
+ATTR_INPUT_ENERGY_TODAY = "input_energy_today"  # kWh
 ATTR_INPUT_ENERGY_TOTAL = "input_energy_total"  # kWh
 
 ATTR_INPUT_1_VOLTAGE = "input_1_voltage"  # V

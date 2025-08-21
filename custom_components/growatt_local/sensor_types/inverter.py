@@ -20,6 +20,7 @@ from .switch_entity_description import GrowattSwitchEntityDescription
 from ..API.device_type.base import (
     ATTR_INVERTER_ENABLED,
     ATTR_INPUT_POWER,
+    ATTR_INPUT_ENERGY_TODAY,
     ATTR_INPUT_ENERGY_TOTAL,
     ATTR_INPUT_1_VOLTAGE,
     ATTR_INPUT_1_AMPERAGE,
@@ -104,6 +105,14 @@ INVERTER_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
         native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
+    ),
+    GrowattSensorEntityDescription(
+        key=ATTR_INPUT_ENERGY_TODAY,
+        name="PV (Today)",
+        native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
+        device_class=SensorDeviceClass.ENERGY,
+        state_class=SensorStateClass.TOTAL_INCREASING,
+        midnight_reset=True,
     ),
     GrowattSensorEntityDescription(
         key=ATTR_INPUT_ENERGY_TOTAL,

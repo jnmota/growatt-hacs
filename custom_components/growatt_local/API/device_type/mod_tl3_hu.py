@@ -24,6 +24,7 @@ from .base import (
     ATTR_INPUT_3_POWER,
     ATTR_INPUT_3_ENERGY_TODAY,
     ATTR_INPUT_3_ENERGY_TOTAL,
+    ATTR_INPUT_ENERGY_TODAY,
     ATTR_OUTPUT_POWER,
     ATTR_SYSTEM_OUTPUT_POWER,
     ATTR_OUTPUT_REACTIVE_POWER,
@@ -182,6 +183,9 @@ MOD_TL3_HU_INPUT_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
     ),
     GrowattDeviceRegisters(
         name=ATTR_POWER_USER_LOAD_TOTAL, register=3077, value_type=float, length=2
+    ),
+    GrowattDeviceRegisters(
+        name=ATTR_INPUT_ENERGY_TODAY, register=3083, value_type=float, length=2
     ),
     GrowattDeviceRegisters(
         name=ATTR_TEMPERATURE, register=3093, value_type=int, length=1, multiplier=0.1
