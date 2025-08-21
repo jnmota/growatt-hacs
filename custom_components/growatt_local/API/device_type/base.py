@@ -124,6 +124,8 @@ ATTR_PAC_TO_USER_LOAD_TOTAL = "pac_to_user_load_total"  # W
 ATTR_POWER_TO_USER = "power_to_user"  # W
 ATTR_POWER_TO_GRID = "power_to_grid"  # W
 ATTR_POWER_USER_LOAD = "power_user_load"  # W
+ATTR_POWER_USER_LOAD_TODAY = "power_user_load_today"  # W
+ATTR_POWER_USER_LOAD_TOTAL = "power_user_load_total"  # W
 
 ATTR_ENERGY_TO_USER_TODAY = "energy_to_user_today"  # kWh
 ATTR_ENERGY_TO_USER_TOTAL = "energy_to_user_total"  # kWh

@@ -21,6 +21,8 @@ from ..API.device_type.base import (
     ATTR_POWER_TO_USER,
     ATTR_POWER_TO_GRID,
     ATTR_POWER_USER_LOAD,
+    ATTR_POWER_USER_LOAD_TODAY,
+    ATTR_POWER_USER_LOAD_TOTAL,
     ATTR_ENERGY_TO_USER_TODAY,
     ATTR_ENERGY_TO_USER_TOTAL,
     ATTR_ENERGY_TO_GRID_TODAY,
@@ -77,6 +79,18 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
     GrowattSensorEntityDescription(
         key=ATTR_POWER_USER_LOAD,
         name="Load",
+        native_unit_of_measurement=UnitOfPower.WATT,
+        device_class=SensorDeviceClass.POWER,
+    ),
+    GrowattSensorEntityDescription(
+        key=ATTR_POWER_USER_LOAD_TODAY,
+        name="Load (Today)",
+        native_unit_of_measurement=UnitOfPower.WATT,
+        device_class=SensorDeviceClass.POWER,
+    ),
+    GrowattSensorEntityDescription(
+        key=ATTR_POWER_USER_LOAD_TOTAL,
+        name="Load (Total)",
         native_unit_of_measurement=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER,
     ),
