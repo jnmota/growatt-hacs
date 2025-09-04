@@ -16,16 +16,9 @@ from pymodbus.client.serial import AsyncModbusSerialClient
 from pymodbus.client.tcp import AsyncModbusTcpClient
 from pymodbus.client.udp import AsyncModbusUdpClient
 from pymodbus.framer import FramerType
+from pymodbus.constants import Endian
+from pymodbus.payload import BinaryPayloadBuilder
 from pymodbus.pdu import ModbusPDU
-try:
-    from pymodbus.payload import BinaryPayloadBuilder, Endian  # pymodbus 3.x+
-except Exception:
-    # pymodbus 2.x
-    from pymodbus.constants import Endian
-    try:
-        from pymodbus.payload import BinaryPayloadBuilder
-    except Exception:
-        BinaryPayloadBuilder = None
 
 from .device_type.base import (
     GrowattDeviceRegisters,
