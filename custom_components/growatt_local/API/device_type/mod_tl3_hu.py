@@ -16,12 +16,18 @@ from .base import (
     ATTR_INPUT_POWER,
     ATTR_INPUT_ENERGY_TOTAL,
     ATTR_INPUT_1_POWER,
+    ATTR_INPUT_1_VOLTAGE,
+    ATTR_INPUT_1_AMPERAGE,
     ATTR_INPUT_1_ENERGY_TODAY,
     ATTR_INPUT_1_ENERGY_TOTAL,
     ATTR_INPUT_2_POWER,
+    ATTR_INPUT_2_VOLTAGE,
+    ATTR_INPUT_2_AMPERAGE,
     ATTR_INPUT_2_ENERGY_TODAY,
     ATTR_INPUT_2_ENERGY_TOTAL,
     ATTR_INPUT_3_POWER,
+    ATTR_INPUT_3_VOLTAGE,
+    ATTR_INPUT_3_AMPERAGE,
     ATTR_INPUT_3_ENERGY_TODAY,
     ATTR_INPUT_3_ENERGY_TOTAL,
     ATTR_INPUT_ENERGY_TODAY,
@@ -116,10 +122,28 @@ MOD_TL3_HU_INPUT_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
         name=ATTR_INPUT_POWER, register=3001, value_type=float, length=2
     ),
     GrowattDeviceRegisters(
+        name=ATTR_INPUT_1_VOLTAGE, register=3003, value_type=int, length=1, multiplier=0.1
+    ),
+    GrowattDeviceRegisters(
+        name=ATTR_INPUT_1_AMPERAGE, register=3004, value_type=int, length=1, multiplier=0.1
+    ),
+    GrowattDeviceRegisters(
         name=ATTR_INPUT_1_POWER, register=3005, value_type=float, length=2,
     ),
     GrowattDeviceRegisters(
+        name=ATTR_INPUT_2_VOLTAGE, register=3007, value_type=int, length=1, multiplier=0.1
+    ),
+    GrowattDeviceRegisters(
+        name=ATTR_INPUT_2_AMPERAGE, register=3008, value_type=int, length=1, multiplier=0.1
+    ),
+    GrowattDeviceRegisters(
         name=ATTR_INPUT_2_POWER, register=3009, value_type=float, length=2
+    ),
+    GrowattDeviceRegisters(
+        name=ATTR_INPUT_3_VOLTAGE, register=3011, value_type=int, length=1, multiplier=0.1
+    ),
+    GrowattDeviceRegisters(
+        name=ATTR_INPUT_3_AMPERAGE, register=3012, value_type=int, length=1, multiplier=0.1
     ),
     GrowattDeviceRegisters(
         name=ATTR_INPUT_3_POWER, register=3013, value_type=float, length=2
