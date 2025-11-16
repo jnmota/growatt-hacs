@@ -47,8 +47,8 @@ STORAGE_SWITCH_TYPES: tuple[GrowattSwitchEntityDescription, ...] = (
     GrowattSwitchEntityDescription(
         key=ATTR_TOU_TIME_1_MODE,
         name="Battery First",
-        state_on=40960,
-        state_off=8192
+        state_on=0xA000,
+        state_off=0x2000
     )
 )
 
