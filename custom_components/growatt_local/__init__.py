@@ -369,6 +369,16 @@ class GrowattLocalCoordinator(DataUpdateCoordinator):
 
     async def write_register(self, key: str, payload):
         register = self.growatt_api.get_holding_register_by_name(key)
-        #TODO: better logging 
+        #TODO: better logging
         _LOGGER.debug("Device type key %s and register %d", register.name, register.register)
-        await self.growatt_api.write_register(register.register, payload)
+
+        # Handle multi-word registers (length > 1)
+        if register.length > 1:
+            # Split 32-bit value into two 16-bit words
+            high_word = (payload >> 16) & 0xFFFF
+            low_word = payload & 0xFFFF
+            _LOGGER.debug("Writing multi-word register: high_word=%d, low_word=%d", high_word, low_word)
+            await self.growatt_api.write_register(register.register, high_word)
+            await self.growatt_api.write_register(register.register + 1, low_word)
+        else:
+            await self.growatt_api.write_register(register.register, payload)
