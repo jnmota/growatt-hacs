@@ -245,16 +245,7 @@ def process_registers(
         if (register := registers.get(key)) is None:
             continue
 
-        if register.value_type == int and register.length == 2:
-            # Handle 32-bit integers stored across two 16-bit registers
-            if (second_value := register_values.get(key + 1, None)) is None:
-                continue
-
-            # Combine two 16-bit registers into a 32-bit value
-            combined_value = (value << 16) | second_value
-            result[register.name] = round(combined_value * register.multiplier)
-
-        elif register.value_type == int:
+        if register.value_type == int:
             result[register.name] = round(value * register.multiplier)
 
         elif register.value_type == float and register.length == 2:

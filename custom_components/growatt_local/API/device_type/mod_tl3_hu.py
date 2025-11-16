@@ -57,7 +57,7 @@ from .base import (
     ATTR_CHARGE_ENERGY_TOTAL,
     ATTR_AC_CHARGE_ENABLED,
     ATTR_SERIAL_NUMBER,
-    ATTR_TOU_TIME_1_MODE,
+    ATTR_BATTERY_FIRST_ENABLED,
     ATTR_BATTERY_DISCHARGE_STOP_SOC
 )
 
@@ -122,10 +122,10 @@ MOD_TL3_HU_HOLDING_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
     ),
     # CUSTOM TO ENABLE AC CHARGE WITH TOU (Requires 00:00-23:59 interval)
     GrowattDeviceRegisters(
-        name=ATTR_TOU_TIME_1_MODE,
-        register=3038,
+        name=ATTR_BATTERY_FIRST_ENABLED,
+        register=608,
         value_type=int,
-        length=2
+        length=1
     )
 )
 

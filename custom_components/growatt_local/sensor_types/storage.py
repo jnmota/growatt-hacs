@@ -15,7 +15,7 @@ from .switch_entity_description import GrowattSwitchEntityDescription
 
 from ..API.device_type.base import (
     ATTR_BATTERY_DISCHARGE_STOP_SOC,
-    ATTR_TOU_TIME_1_MODE,
+    ATTR_BATTERY_FIRST_ENABLED,
     ATTR_AC_CHARGE_ENABLED,
     ATTR_SOC_PERCENTAGE,
     ATTR_DISCHARGE_POWER,
@@ -45,10 +45,10 @@ STORAGE_SWITCH_TYPES: tuple[GrowattSwitchEntityDescription, ...] = (
         state_off=0x0
     ),
     GrowattSwitchEntityDescription(
-        key=ATTR_TOU_TIME_1_MODE,
+        key=ATTR_BATTERY_FIRST_ENABLED,
         name="Battery First",
-        state_on=0xA000173B,
-        state_off=0x2000173B
+        state_on=0x1,
+        state_off=0x0
     )
 )
 
@@ -147,8 +147,8 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
         device_class=SensorDeviceClass.BATTERY
     ),
     GrowattSensorEntityDescription(
-        key=ATTR_TOU_TIME_1_MODE,
-        name="TOU Time 1 Mode"
+        key=ATTR_BATTERY_FIRST_ENABLED,
+        name="Battery First"
     ),
     GrowattSensorEntityDescription(
         key=ATTR_DISCHARGE_ENERGY_TODAY,
