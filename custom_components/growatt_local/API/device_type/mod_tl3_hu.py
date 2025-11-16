@@ -56,7 +56,9 @@ from .base import (
     ATTR_CHARGE_ENERGY_TODAY,
     ATTR_CHARGE_ENERGY_TOTAL,
     ATTR_AC_CHARGE_ENABLED,
-    ATTR_SERIAL_NUMBER
+    ATTR_SERIAL_NUMBER,
+    ATTR_TOU_TIME_1_MODE,
+
 )
 
 
@@ -111,7 +113,13 @@ MOD_TL3_HU_HOLDING_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
         register=3049,
         value_type=int,
         length=1
-    )
+    ),
+    GrowattDeviceRegisters(
+        name=ATTR_TOU_TIME_1_MODE,
+        register=3038,
+        value_type=int,
+        length=1
+    ) 
 )
 
 MOD_TL3_HU_INPUT_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (

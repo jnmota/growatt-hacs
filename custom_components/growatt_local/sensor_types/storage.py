@@ -14,6 +14,7 @@ from .sensor_entity_description import GrowattSensorEntityDescription
 from .switch_entity_description import GrowattSwitchEntityDescription
 
 from ..API.device_type.base import (
+    ATTR_TOU_TIME_1_MODE,
     ATTR_AC_CHARGE_ENABLED,
     ATTR_SOC_PERCENTAGE,
     ATTR_DISCHARGE_POWER,
@@ -131,6 +132,10 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
     GrowattSensorEntityDescription(
         key=ATTR_AC_CHARGE_ENABLED,
         name="Grid Charge"
+    ),
+    GrowattSensorEntityDescription(
+        key=ATTR_TOU_TIME_1_MODE,
+        name="TOU Time 1 Mode"
     ),
     GrowattSensorEntityDescription(
         key=ATTR_DISCHARGE_ENERGY_TODAY,
