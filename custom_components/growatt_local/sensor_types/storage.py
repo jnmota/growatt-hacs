@@ -47,8 +47,8 @@ STORAGE_SWITCH_TYPES: tuple[GrowattSwitchEntityDescription, ...] = (
     GrowattSwitchEntityDescription(
         key=ATTR_TOU_TIME_1_MODE,
         name="Battery First",
-        state_on=0xA000,
-        state_off=0x2000
+        state_on=40960,
+        state_off=8192
     )
 )
 
@@ -142,7 +142,9 @@ STORAGE_SENSOR_TYPES: tuple[GrowattSensorEntityDescription, ...] = (
     ),
     GrowattSensorEntityDescription(
         key=ATTR_BATTERY_DISCHARGE_STOP_SOC,
-        name="Battery Discharge Stop SOC"
+        name="On-Grid Battery Discharge Stop SOC",
+        native_unit_of_measurement=PERCENTAGE,
+        device_class=SensorDeviceClass.BATTERY
     ),
     GrowattSensorEntityDescription(
         key=ATTR_TOU_TIME_1_MODE,

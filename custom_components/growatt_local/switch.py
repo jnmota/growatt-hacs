@@ -135,8 +135,8 @@ class GrowattDeviceEntity(CoordinatorEntity, RestoreEntity, SwitchEntity):
             self._attr_is_on = value & self.entity_description.mask
             self.masked_value = value ^ self._attr_is_on
 
-        else:    
-            self._attr_is_on = value >= 1
+        else:
+            self._attr_is_on = value == self.entity_description.state_on
 
         self.async_write_ha_state()
 
