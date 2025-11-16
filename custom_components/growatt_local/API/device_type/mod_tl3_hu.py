@@ -116,7 +116,7 @@ MOD_TL3_HU_HOLDING_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
     ),
     GrowattDeviceRegisters(
         name=ATTR_BATTERY_DISCHARGE_STOP_SOC,
-        register=952,
+        register=3067,
         value_type=int,
         length=1
     ),
@@ -125,7 +125,7 @@ MOD_TL3_HU_HOLDING_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
         name=ATTR_TOU_TIME_1_MODE,
         register=3038,
         value_type=int,
-        length=1
+        length=2
     )
 )
 
