@@ -120,7 +120,6 @@ MOD_TL3_HU_HOLDING_REGISTERS: tuple[GrowattDeviceRegisters, ...] = (
         value_type=int,
         length=1
     ),
-    # CUSTOM TO ENABLE AC CHARGE WITH TOU (Requires 00:00-23:59 interval)
     GrowattDeviceRegisters(
         name=ATTR_BATTERY_FIRST_ENABLED,
         register=608,
